@@ -1,0 +1,275 @@
+/*!
+ * QRcdr - php QR Code generator
+ * Copyright 2015 Nicola Franchini
+ * item sold on codecanyon https://codecanyon.net/item/qrcdr-responsive-qr-code-generator/9226839
+ */
+a:hover, a:focus, a:active{
+    text-decoration: none;
+}
+hr{
+    border-color: #c7c7c7;
+}
+.form-control{
+    background-color: rgba(0,0,0,0.01);
+}
+
+.btn{
+    border-radius: 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+.custom-select{
+    background-color: transparent;
+}
+/*
+.langmenu{
+    position: fixed;
+    top: 0;
+    right: 15px;
+}*/
+
+.custom-file-label::after{
+    content: "\f093" !important;
+    font-family:'FontAwesome';
+}
+
+.nav-pills > li > a span{
+    font-size: .8em;
+}
+label {
+    font-size: .9em;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.logoselecta img{
+    width: 2em;
+}
+
+.styleselecta img{
+    width: 2.5em;
+}
+/* 
+* Headings
+*/
+h1{
+    font-size: 2.1rem;
+}
+.display-4 {
+    font-size: 2.5rem;
+}
+.display-3 {
+    font-size: 3rem;
+}
+.display-2 {
+    font-size: 3.5rem;
+}
+.display-1 {
+    font-size: 4rem;
+}
+
+@media (min-width: 576px) {
+    h1{
+        font-size: 2.2rem;
+    }
+    .display-4 {
+        font-size: 3rem;
+    }
+    .display-3 {
+        font-size: 3.5rem;
+    }
+    .display-2 {
+        font-size: 4rem;
+    }
+    .display-1 {
+        font-size: 4.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    h1{
+        font-size: 2.3rem;
+    }
+    .display-4 {
+        font-size: 3.5rem;
+    }
+    .display-3 {
+        font-size: 4rem;
+    }
+    .display-2 {
+        font-size: 4.5rem;
+    }
+    .display-1 {
+        font-size: 5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    h1{
+        font-size: 2.4rem;
+    }
+    .display-4 {
+        font-size: 4rem;
+    }
+    .display-3 {
+        font-size: 4.5rem;
+    }
+    .display-2 {
+        font-size: 5rem;
+    }
+    .display-1 {
+        font-size: 5.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    h1{
+        font-size: 2.5rem;
+    }
+    .display-4 {
+        font-size: 4.5rem;
+    }
+    .display-3 {
+        font-size: 5rem;
+    }
+    .display-2 {
+        font-size: 5.5rem;
+    }
+    .display-1 {
+        font-size: 6rem;
+    }
+}
+
+/* 
+* Google map
+*/
+#map-canvas img { 
+    max-width: none; 
+}
+#map-canvas {
+    width: 100%;
+    height: 350px;
+    padding: 0px;
+    float: left;
+}
+.controls {
+    margin-top: 16px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+#pac-input, #latlong input{
+    background-color: #fff;
+    padding: 0 11px 0 13px;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    text-overflow: ellipsis;
+}
+#pac-input{
+    width: 50%;
+}
+#latbox, #lngbox{
+    width: 20%;
+}
+#pac-input:focus, #latlong input:focus {
+    border-color: #4d90fe;
+}
+.placeresult{
+    float: left;
+    width: 100%;
+    padding: 10px;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    position: relative;
+}
+/* 
+* QR code placeholder 
+*/
+.wrapresult, .resultholder{
+    position: relative;
+}
+.placeresult{
+    float: left;
+    width: 100%;
+    padding: 10px;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    position: relative;
+}
+.preloader{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    font-size: 36px;
+    display: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.preloader .fa-cog{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -18px;
+    margin-top: -18px;
+}
+
+.was-validated .form-control:valid {
+  background-image: none;
+  border-color: #ced4da;
+}
+.was-validated .custom-select:valid{
+  border-color: #ced4da;   
+}
+
+.custom-control-input.is-valid ~ .custom-control-label, .was-validated .custom-control-input:valid ~ .custom-control-label{
+  color: inherit;   
+}
+
+.was-validated .custom-select:invalid,
+.was-validated .custom-select:valid {
+     background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px;
+}
+.overlay-gradient{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    background: -moz-linear-gradient(-45deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,255,255,0.2)), color-stop(100%, rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(-45deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+}

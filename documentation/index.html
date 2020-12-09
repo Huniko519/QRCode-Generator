@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Documentation | QRcdr - QR Code generator</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css">
+
+<style type="text/css">
+
+</style>
+</head>
+<body data-spy="scroll" data-target=".blockleft">
+
+<div class="container-fluid">
+<div class="row">
+    <nav class="col-md-4 col-lg-3 d-none d-md-block bg-light sidebar py-4">
+        <a class="text-center d-block" href="http://lab.veno.it/qrcdr"><img src="assets/images/logo.png"></a>
+        <div class="blockleft sticky-top pt-3">
+            <ul class="nav flex-column nav-pills navbar-inverse">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#start">Start</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#install">Installation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#options">Options</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#watermarks">Watermarks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#location">Location</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#customization">Customization</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#language">Manage Translations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#notes">Embed</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="blockright col-md-8 col-lg-9 ml-sm-auto px-0">
+        <div id="start" class=" bg-primary text-light p-4">
+        <section class="block">
+            <p>Thank you for purchasing <strong>QRcdr.</strong><br>
+            If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a class="text-white badge badge-success" target="_blank" href="https://codecanyon.net/item/qrcdr-responsive-qr-code-generator/9226839/support/contact">here</a><br>
+            Thanks so much!</p>
+            <p><a target="blank" class="btn btn-warning" href="http://veno.es/qrcdr">veno.es/qrcdr</a></p>
+        </section>
+        </div>
+    <div class="px-4">
+    <section class="block pt-5" id="install">
+
+        <h2>Installation</h2>
+        <p>Copy all files and folders from <strong>/qrcdr</strong> directory to your web space via FTP (put everything in the root if you will use the whole domain as file manager, otherwise create a custom directory and upload everything in it).
+        </p>
+        <img class="img-responsive" src="assets/images/qrcdr-files.jpg">
+        <p> Navigate with your browser to the url where you uploaded the files.</p>
+        <p>That’s all! You are ready to use QRcdr with its default settings.</p>
+    </section>
+    <hr>
+    <section class="block" id="options">
+        <h2>Options</h2>
+        <p>Default settings are adjustable inside the file <code>config.php</code>:
+<pre class="prettyprint lang-php linenums">
+$_CONFIG = array(
+    'lang' => 'en',                            // main language
+    'uploads_dir' => 'temp',                   // uploads directory
+    'qrcodes_dir' => 'qrcodes',                // qr codes directory
+    'delete_old_files' => true,                // delete periodically old files
+    'file_lifetime' => 24,                     // delete files older than..(hours) from /uploads_dir and /qrcodes_dir
+    'uploader' => true,                        // let users upload their own logo
+    'upload_max_filesize' => 1000,             // max filesize in Kb
+    'thumb_size' => 130,                       // size of the squared thumbnail after uploads
+    'qr_bgcolor' => '#FFFFFF',                 // default background color for generated qrcodes
+    'qr_color' => '#000000',                   // default foreground color for generated qrcodes
+    'session_name' => 'qrSession',             // custom session name for the script
+    'placeholder' => 'images/placeholder.png', // default placeholder
+    'link' => true,                            // activate link tab
+    'location' => true,                        // activate location tab
+    'email' => true,                           // activate email tab
+    'text' => true,                            // activate text tab
+    'tel' => true,                             // activate telephone tab
+    'sms' => true,                             // activate sms tab
+    'wifi' => true,                            // activate wifi tab
+    'vcard' => true,                           // activate v-card tab
+    'paypal' => true,                          // activate PayPal tab
+    'bitcoin' => true,                         // activate BitCoin tab
+    'whatsapp' => true,                        // activate WhatsApp tab
+    'default_tab' => '#link',                  // available options: #link | #location | #email | #text | #sms | #wifi | #vcard | #paypal | #bitcoin | #whatsapp
+    'detect_browser_lang' => false,            // detect browser language
+    'google_api_key' => 'YOUR-API-KEY',        // https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key
+    'color_primary' => false,                  // main color, used for buttons and header background. set a #hex color or false to get random colors
+    );
+</pre>
+</section>
+<hr>
+<section class="block" id="watermarks">
+    <h2>Watermarks</h2>
+    <p>If you want to change or hide default watermarks, simply replace or remove the images inside <code>images/watermarks/</code></p>
+    <p>.jpg, .gif, .png file are accepted</p>
+
+        <img class="img-responsive" src="assets/images/watermarks.png">
+</section>
+<hr>
+<section class="block" id="location">
+    <h2>Location</h2>
+
+    <p>Google Map needs an API KEY, so if you enable the tab Location you must get one api key here:<br>
+        <a target="_blank" href="https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key">https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key</a><br>
+        and copy it inside the file <strong>config.php</strong></p>
+
+    <p>If you want to change the default location shown by Google map, open <code>js/all.js</code>, around line 39.</p>
+    <pre>var start = new google.maps.LatLng(40.7127837, -74.00594130000002);
+</pre>
+</section>
+
+    <hr>
+    <section class="block" id="customization">
+        <h2>Customization</h2>
+        <p>The attribute <code>'color_primary'</code> inside the file <strong>config.php</strong> will set the main color for all the buttons and on the header background.</p>
+        <p>Since version 3.0 you have two starter templates called <strong>header.php</strong> and <strong>footer.php</strong>, located inside the folder /template/<br>
+            Edit their contents or remove them if you don't need that</p>
+    </section>
+        <hr>
+    <section class="block" id="language">
+        <h2>Manage translations</h2>
+
+        <p>If you want to add your custom language, duplicate and rename the file <code>lang/en.php</code> using the 2-letters ISO code desired and update also the value <code>'lang' => 'en'</code> inside your main config file <code>config.php</code></p>
+
+        <p>Language menu is displayed with the following function:</p>
+
+        <pre>&lt;?php echo langMenu(); ?&gt;</pre>
+        
+        <p>you can choose if display it as dropdown menu (default) or as simple list, and set a custom class:</p>
+
+        <pre>&lt;?php echo langMenu('list', 'customclass'); ?&gt;</pre>
+        <p>The first variable can be 'menu' or 'list', the second is an optional custom class assigned to language menu (default: 'langmenu')</p>
+
+        <p>All translatable terms, including page title, description, and meta-keywords are inside the respective .php file in /translations/ folder.</p>
+        <p>default: <strong>/translations/en.php</strong></p>
+
+    </section>
+        <hr>
+    <section class="block" id="notes">
+        <h2>Embed</h2>
+        <p>You can embed your self hosted generator everywhere using iframes:</p>
+        <pre class="prettyprint lang-php linenums">&lt;iframe width="100%" src="http://www.example.com/qrcdr/" &gt;&lt;/iframe&gt;</pre>
+        <hr>
+    </section>
+    <section class="block mb-5 pb-5">
+        <h2>Notes</h2>
+        <p>Print media styles, Typography, Forms and Tables are based on <a target="_blank" href="http://getbootstrap.com/">Bootstrap v4</a></p>
+        <p>Icons are based on <a target="_blank" href="https://fontawesome.com/v4.7.0">Font Awesome 4.7</a></p>
+    </section>
+
+    </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script>
+  !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()   
+    })
+  }(window.jQuery)
+</script>
+</body>
+</html>                                   
